@@ -22,3 +22,26 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+
+
+yyWord=input('input year: ')
+    
+mmWord=input('input month: ')
+
+
+
+
+try: 
+    mmNum = int(mmWord)
+    yyNum = int(yyWord)
+    print(calendar.month(yyNum, mmNum)) 
+except (NameError, ValueError) as error:
+    print(calendar.month(datetime.now().year, datetime.now().month))    
+except ValueError:
+    print(calendar.month(datetime.now().year, mmNum))
+
+   
+# display the calendar 
+
+
