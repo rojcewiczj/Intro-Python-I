@@ -10,6 +10,7 @@ import sys
 
 # Print out the command line arguments in sys.argv, one per line:
 # YOUR CODE HERE
+print(type(sys.argv))
 a = sys.argv
 for x in range(len(a)):
     print (a[x]),

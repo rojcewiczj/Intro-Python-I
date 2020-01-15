@@ -23,23 +23,25 @@ import sys
 import calendar
 from datetime import datetime
 
+print(sys.argv)
 
 
-yyWord=input('input year: ')
-    
-mmWord=input('input month: ')
 
 
 
 
 try: 
-    mmNum = int(mmWord)
-    yyNum = int(yyWord)
-    print(calendar.month(yyNum, mmNum)) 
-except (NameError, ValueError) as error:
-    print(calendar.month(datetime.now().year, datetime.now().month))    
-except ValueError:
-    print(calendar.month(datetime.now().year, mmNum))
+
+  if len(sys.argv) == 1:
+    print(calendar.month(datetime.now().year, datetime.now().month))   
+  elif len(sys.argv) == 2:
+    print(calendar.month(datetime.now().year, int(sys.argv[1])))
+  elif len(sys.argv) == 3:
+    print(calendar.month(int(sys.argv[2]), int(sys.argv[1])))
+
+except:
+  print("error")
+
 
    
 # display the calendar 
